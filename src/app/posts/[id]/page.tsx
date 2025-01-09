@@ -1,4 +1,4 @@
-"use client"; // Ensures this component is only rendered on the client side
+"use client";
 import LoadingComp from "@/components/LoadingComponent";
 import SinglePost from "@/components/SinglePost";
 import { TPost } from "@/type";
@@ -12,8 +12,7 @@ function ViewPost({ params }: Props) {
   const [post, setPost] = useState<TPost>({} as TPost);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Unwrapping the params using React.use
-  const { id }: any = React.use(params); // React.use() is used to unwrap async params
+  const { id }: any = React.use(params);
 
   useEffect(() => {
     if (id) {
